@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prothom Alo - SP Siam Ahmed Feature</title>
+    <meta name="title" content="SP Siam Ahmed: Emerging Young Web Developer Making Waves in Bangladesh">
+    <meta name="description" content="Discover SP Siam Ahmed, a talented young web developer from Bangladesh, making waves in the tech industry with his innovative projects and contributions.">
+    <meta name="keywords" content="SP Siam Ahmed, Bangladeshi Web Developer, Young Developer, Web Development, Tech in Bangladesh">
+    <meta name="author" content="SP Siam Ahmed">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SP Siam Ahmed: Emerging Young Web Developer Making Waves in Bangladesh">
+    <meta property="og:description" content="Discover SP Siam Ahmed, a talented young web developer from Bangladesh, making waves in the tech industry with his innovative projects and contributions.">
+    <meta property="og:image" content="https://yourwebsite.com/images/sp-siam-ahmed.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/protom-alo-post">
+    <meta property="og:site_name" content="Prothom Alo">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SP Siam Ahmed: Emerging Young Web Developer Making Waves in Bangladesh">
+    <meta name="twitter:description" content="Discover SP Siam Ahmed, a talented young web developer from Bangladesh, making waves in the tech industry with his innovative projects and contributions.">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/sp-siam-ahmed.jpg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #c41e3a;
+            --dark-red: #8b1429;
+            --gold: #d4af37;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .newspaper-wrapper {
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .newspaper-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .newspaper-container.loaded {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .masthead {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 56px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo-bengali {
+            font-size: 48px;
+            color: var(--gold);
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            color: var(--gold);
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .date-info {
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .date-info i {
+            margin-right: 8px;
+            color: var(--gold);
+        }
+
+        .article-section {
+            padding: 60px 40px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            color: white;
+            padding: 10px 25px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+        }
+
+        .main-headline {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 25px;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            padding-bottom: 25px;
+        }
+
+        .main-headline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-red), var(--gold));
+            border-radius: 10px;
+        }
+
+        .sub-headline {
+            font-size: 20px;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            font-weight: 400;
+            padding-left: 25px;
+            border-left: 5px solid var(--gold);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .author-details {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--primary-red);
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .author-location {
+            color: #666;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .image-icon {
+            font-size: 100px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .image-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .image-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .article-content {
+            font-size: 17px;
+            line-height: 2;
+            color: #333;
+            text-align: justify;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .article-content p {
+            margin-bottom: 25px;
+        }
+
+        .drop-cap {
+            float: left;
+            font-size: 90px;
+            line-height: 70px;
+            padding: 8px 12px 0 0;
+            color: var(--primary-red);
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .quote-card {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe6b3 100%);
+            border-left: 6px solid var(--gold);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+            font-style: italic;
+            font-size: 19px;
+            color: #444;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .quote-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: rgba(212, 175, 55, 0.3);
+        }
+
+        .highlights-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .highlights-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .highlights-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 10px;
+        }
+
+        .highlight-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-red);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .highlight-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .highlight-item i {
+            color: var(--primary-red);
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .social-share {
+            display: flex;
+            gap: 15px;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            align-items: center;
+        }
+
+        .social-share-label {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-right: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .social-btn.facebook { background: #3b5998; }
+        .social-btn.twitter { background: #1da1f2; }
+        .social-btn.linkedin { background: #0077b5; }
+        .social-btn.whatsapp { background: #25d366; }
+
+        .footer {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(196, 30, 58, 0.4);
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .main-headline {
+                font-size: 32px;
+            }
+            
+            .sub-headline {
+                font-size: 18px;
+            }
+            
+            .logo {
+                font-size: 40px;
+            }
+            
+            .article-section {
+                padding: 40px 20px;
+            }
+
+            .feature-image {
+                height: 350px;
+            }
+
+            .highlights-card {
+                padding: 25px;
+            }
+
+            .social-share {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="newspaper-wrapper">
+        <div class="newspaper-container">
+            <div class="header">
+                <div class="masthead">
+                    <div class="logo-section">
+                        <div class="logo" data-aos="fade-down">PROTHOM ALO</div>
+                        <div class="logo-bengali" data-aos="fade-down" data-aos-delay="100">প্রথম আলো</div>
+                        <div class="tagline" data-aos="fade-up" data-aos-delay="200">Lighting the Path of Truth</div>
+                    </div>
+                    <div class="date-info" data-aos="fade-up" data-aos-delay="300">
+                        <div><i class="fas fa-calendar-alt"></i><span id="currentDate"></span></div>
+                        <div><i class="fas fa-map-marker-alt"></i>Dhaka, Bangladesh</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1">
+                            <span class="category-badge" data-aos="fade-right">
+                                <i class="fas fa-code"></i> Technology & Youth
+                            </span>
+                            
+                            <h1 class="main-headline" data-aos="fade-up">
+                                SP Siam Ahmed: Emerging Young Web Developer Making Waves in Bangladesh
+                            </h1>
+                            
+                            <h2 class="sub-headline" data-aos="fade-up" data-aos-delay="100">
+                                From responsive websites to online educational communities, SP Siam Ahmed is shaping the digital future for local students.
+                            </h2>
+                            
+                            <div class="author-info" data-aos="fade-up" data-aos-delay="200">
+                                <div class="author-avatar">PA</div>
+                                <div class="author-details">
+                                    <div class="author-name">Prothom Alo Correspondent</div>
+                                    <div class="author-location">
+                                        <i class="fas fa-map-marker-alt"></i> Katiadi, Kishoreganj
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="feature-image" data-aos="zoom-in" data-aos-delay="300" id="featureImage">
+                                <div class="image-content">
+                                    <img src="profile.jpg" alt="web developer " width="auto" height="400">
+                                    
+                                  <!--  <div class="image-icon"><i class="fas fa-laptop-code"></i></div>
+                                    
+                        -->            
+                                    <div class="image-title">SP Siam Ahmed</div>
+                       <!--             <div class="image-subtitle">Web Developer & Digital Innovator</div>
+                -->                
+                                
+                                </div>
+                                <div class="image-caption">
+                                    <i class="fas fa-camera"></i> SP Siam Ahmed working on a web development project at his workspace in Katiadi
+                                </div>
+                            </div>
+
+                            <div class="article-content">
+                                <p data-aos="fade-up">
+                                    <span class="drop-cap">K</span>atiadi, Bangladesh – At just 18, SP Siam Ahmed has already made a mark in the world of web development and digital content creation. Known for his expertise in HTML, CSS, JavaScript, and the Laravel framework, he designs and develops responsive, user-friendly websites that cater to both local and online audiences.
+                                </p>
+
+                                <p data-aos="fade-up" data-aos-delay="100">
+                                    Currently pursuing his studies at Katiadi Government College, SP Siam Ahmed also runs an online community for students, offering guidance, resources, and educational content. His work is driven by the belief that technology can simplify lives and open doors to opportunities, especially for the younger generation.
+                                </p>
+
+                                <div class="quote-card" data-aos="flip-left" data-aos-delay="200">
+                                    "Technology can simplify lives and open doors to opportunities, especially for the younger generation. My goal is to empower youth through digital learning and innovation."
+                                </div>
+
+                                <p data-aos="fade-up" data-aos-delay="100">
+                                    In an era where Bangladesh is rapidly advancing in the digital sector, young talents like SP Siam Ahmed are becoming instrumental in driving this transformation. His journey began with a curiosity about how websites work, which soon evolved into a passion for creating digital solutions that address real-world problems.
+                                </p>
+
+                                <p data-aos="fade-up" data-aos-delay="200">
+                                    Colleagues and community members describe him as a passionate, innovative, and dedicated professional whose projects inspire others to embrace digital learning. His approach combines technical excellence with a deep understanding of user needs, making his websites not just functional but truly impactful.
+                                </p>
+
+                                <div class="highlights-card" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="highlights-title">Key Highlights</div>
+                                    <div class="highlight-item" data-aos="fade-right" data-aos-delay="400">
+                                        <i class="fas fa-star"></i>
+                                        Young and talented web developer from Bangladesh with 2+ years of experience
+                                    </div>
+                                    <div class="highlight-item" data-aos="fade-right" data-aos-delay="450">
+                                        <i class="fas fa-code"></i>
+                                        Skilled in frontend and backend technologies including Laravel, PHP, and modern JavaScript frameworks
+                                    </div>
+                                    <div class="highlight-item" data-aos="fade-right" data-aos-delay="500">
+                                        <i class="fas fa-users"></i>
+                                        Creator of online educational communities for students, providing resources and guidance
+                                    </div>
+                                    <div class="highlight-item" data-aos="fade-right" data-aos-delay="550">
+                                        <i class="fas fa-lightbulb"></i>
+                                        Passionate about digital learning and youth empowerment through technology
+                                    </div>
+                                    <div class="highlight-item" data-aos="fade-right" data-aos-delay="600">
+                                        <i class="fas fa-globe"></i>
+                                        Successfully serves both local and international clients with custom web solutions
+                                    </div>
+                                </div>
+
+                                <p data-aos="fade-up" data-aos-delay="100">
+                                    With a vision to empower youth through technology and education, SP Siam Ahmed continues to contribute meaningfully to Bangladesh's growing digital landscape. His story serves as an inspiration to countless young students in rural Bangladesh who dream of making their mark in the technology sector.
+                                </p>
+
+                                <p data-aos="fade-up" data-aos-delay="200">
+                                    As Bangladesh aims to achieve its Digital Bangladesh vision and move towards Smart Bangladesh 2041, young innovators like SP Siam Ahmed represent the promise and potential of the nation's youth. His dedication to both his craft and his community demonstrates that age is no barrier to making a significant impact in the digital world.
+                                </p>
+                            </div>
+
+                            <div class="social-share" data-aos="fade-up" data-aos-delay="300">
+                                <div class="social-share-label">
+                                    <i class="fas fa-share-alt"></i> Share Article:
+                                </div>
+                                <div class="social-btn facebook" title="Share on Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                                <div class="social-btn twitter" title="Share on Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                                <div class="social-btn linkedin" title="Share on LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div class="social-btn whatsapp" title="Share on WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-content">
+                    <p><i class="fas fa-newspaper"></i> © 2026 Prothom Alo. All rights reserved.</p>
+                    <p>Published from Dhaka, Bangladesh</p>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">About Us</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Load newspaper container with animation
+            setTimeout(function() {
+                $('.newspaper-container').addClass('loaded');
+            }, 100);
+
+            // Display current date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date();
+            $('#currentDate').text(today.toLocaleDateString('en-US', options));
+
+            // Scroll to top button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#scrollTop').addClass('visible');
+                } else {
+                    $('#scrollTop').removeClass('visible');
+                }
+            });
+
+            $('#scrollTop').click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            // Feature image click effect
+            $('#featureImage').click(function() {
+                $(this).css('transform', 'scale(1.05)');
+                setTimeout(() => {
+                    $(this).css('transform', 'scale(1)');
+                }, 300);
+            });
+
+            // Social share buttons
+            $('.social-btn').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-5px) scale(1.1)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0) scale(1)');
+                }
+            );
+
+            $('.social-btn.facebook').click(function() {
+                alert('Share on Facebook');
+            });
+
+            $('.social-btn.twitter').click(function() {
+                alert('Share on Twitter');
+            });
+
+            $('.social-btn.linkedin').click(function() {
+                alert('Share on LinkedIn');
+            });
+
+            $('.social-btn.whatsapp').click(function() {
+                alert('Share on WhatsApp');
+            });
+
+            // Highlight items hover effect
+            $('.highlight-item').hover(
+                function() {
+                    $(this).css('border-left-width', '8px');
+                },
+                function() {
+                    $(this).css('border-left-width', '4px');
+                }
+            );
+
+            // Category badge pulse effect
+            setInterval(function() {
+                $('.category-badge').fadeOut(100).fadeIn(100);
+            }, 5000);
+
+            // Smooth scroll for internal links
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 100
+                    }, 1000);
+                }
+            });
+
+            // Add reading progress bar
+            const progressBar = $('<div class="reading-progress"></div>');
+            $('body').prepend(progressBar);
+            
+            $('<style>.reading-progress { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #c41e3a, #d4af37); z-index: 9999; transition: width 0.3s ease; }</style>').appendTo('head');
+
+            $(window).scroll(function() {
+                const scrollTop = $(window).scrollTop();
+                const docHeight = $(document).height() - $(window).height();
+                const progress = (scrollTop / docHeight) * 100;
+                $('.reading-progress').css('width', progress + '%');
+            });
+
+            // Typewriter effect for headline (optional)
+            const headline = $('.main-headline');
+            const headlineText = headline.text();
+            headline.text('');
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < headlineText.length) {
+                    headline.text(headline.text() + headlineText.charAt(i));
+                    i++;
+                    setTimeout(typeWriter, 30);
+                }
+            }
+            
+            setTimeout(typeWriter, 500);
+
+            console.log('%c🎉 Professional Newspaper Layout Loaded Successfully!', 'color: #c41e3a; font-size: 16px; font-weight: bold;');
+        });
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SP Siam Ahmed: Emerging Young Web Developer Making Waves in Bangladesh",
+    "description": "Discover SP Siam Ahmed, a talented young web developer from Bangladesh, making waves in the tech industry with his innovative projects and contributions.",
+    "image": "https://yourwebsite.com/images/sp-siam-ahmed.jpg",
+    "author": {
+    "@type": "Person",
+    "name": "SP Siam Ahmed"
+    },
+    "publisher": {
+    "@type": "Organization",
+    "name": "Prothom Alo",
+    "logo": {
+    "@type": "ImageObject",
+    "url": "https://yourwebsite.com/images/prothom-alo-logo.png"
+    }
+    },
+    "datePublished": "2026-01-06",
+    "dateModified": "2026-01-06"
+    }
+    </script>
+</body>
+</html>
